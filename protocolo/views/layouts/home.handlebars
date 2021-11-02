@@ -1,0 +1,74 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+body
+{     
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;                                                                                                
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background: #082032;
+}
+.todo{
+    color: #fff;
+    position: relative;
+    background-color: #150050;
+    width: 500px;
+   
+    border-radius: 20px;
+    text-align: center;
+    top: 1ch;
+    left: 40ch;
+}
+.b {
+    position: relative;
+    color: #fff;
+    background: none;
+    border-radius: 20px;
+    border: solid 1px #fff ;
+    font-size: 20px;  
+ background: none;
+    transition: 0.5s;
+    
+   
+}
+.todo input[type='text']{
+    height:5ch ;
+     width:30ch;
+ 
+    color: #fff;
+    background: none;
+    border: solid 1px rgb(4, 243, 76);
+    border-radius: 20px;
+    text-align: center;
+}
+.todo textarea{
+    height: auto;
+    color: #fff;
+    background: none;
+    border: solid 1px #F43B86;
+    border-radius: 20px;
+    text-align: center;
+}
+.b:hover{
+  
+     background: #BF1363;
+     border: none;
+
+}
+</style>
+
+
+
+<div class="todo" id="todo">
+    <h1>lista de poste</h1><a href="/"><button id="b" class="b">ATUALIZAR</button></a>
+{{#each posta}} 
+ <h1>{{dataValues.titulo }}</h1>
+{{dataValues.conteudo}}<br>
+ <a href="/deleta/{{dataValues.id}}"><button id="b" class="b">deleta</button></a>     <hr> 
+{{/each}}
+<a href="/formulario"><button id="b" class="b">Volta ao cadastro</button></a>     <hr> 
+
+</div>
+<small> {{dataValues.createdAt}}
+</small> 
