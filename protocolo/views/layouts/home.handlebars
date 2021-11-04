@@ -9,6 +9,15 @@ body
     scroll-behavior: smooth;
     background: #082032;
 }
+#t{
+    
+    background: #334443;
+}
+#o{
+position: relative;
+left: 5ch;
+ width: 40ch;
+}
 .todo{
     color: #fff;
     position: relative;
@@ -60,15 +69,18 @@ body
 
 
 
-<div class="todo" id="todo">
+ <div class="todo" id="t">
     <h1>lista de poste</h1><a href="/"><button id="b" class="b">ATUALIZAR</button></a>
-{{#each posta}} 
+{{#each posta}}
+ <div class="todo" id="o">
  <h1>{{dataValues.titulo }}</h1>
 {{dataValues.conteudo}}<br>
- <a href="/deleta/{{dataValues.id}}"><button id="b" class="b">deleta</button></a>     <hr> 
-{{/each}}
-<a href="/formulario"><button id="b" class="b">Volta ao cadastro</button></a>     <hr> 
-
+ <a href="/deleta/{{dataValues.id}}"><button id="b" class="b">deleta</button></a>    
 </div>
+{{/each}}
+<br><a href="/formulario"><button id="b" class="b">Volta ao cadastro</button></a><br>    
+</div>
+
+
 <small> {{dataValues.createdAt}}
 </small> 
