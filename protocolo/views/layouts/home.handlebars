@@ -19,7 +19,7 @@ left: 5ch;
  width: 40ch;
 }
 .todo{
-    color: #fff;
+  
     position: relative;
     background-color: #150050;
     width: 500px;
@@ -29,7 +29,7 @@ left: 5ch;
     top: 1ch;
     left: 40ch;
 }
-.b {
+#b {
     position: relative;
     color: #fff;
     background: none;
@@ -59,27 +59,38 @@ left: 5ch;
     border-radius: 20px;
     text-align: center;
 }
-.b:hover{
+#b:hover{
   
      background: #BF1363;
      border: none;
-
+}
+#cat{
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 10ch;
+    border-radius: 20px;
+    background-color: #150050;
+    
 }
 </style>
 
 
 
  <div class="todo" id="t">
-    <h1>lista de poste</h1><a href="/"><button id="b" class="b">ATUALIZAR</button></a>
+    <h1>lista de poste</h1><a href="/"><button id="b" class="b">ATUALIZAR</button></a><br>
 {{#each posta}}
- <div class="todo" id="o">
- <h1>{{dataValues.titulo }}</h1>
-{{dataValues.conteudo}}<br>
- <a href="/deleta/{{dataValues.id}}"><button id="b" class="b">deleta</button></a>    
-</div>
+<br><div class="card" id="cat" style="width: 18rem;"> 
+  <div class="card-body">
+    <h5 class="card-title">{{dataValues.titulo }}</h5>
+    <p class="card-text">{{dataValues.conteudo }}</p>
+    <a href="/deleta/{{dataValues.id}}" id="b" class="btn btn-primary">Deleta</a>
+  </div><br>
+</div><br>
 {{/each}}
 <br><a href="/formulario"><button id="b" class="b">Volta ao cadastro</button></a><br>    
-</div>
+
 
 
 <small> {{dataValues.createdAt}}
